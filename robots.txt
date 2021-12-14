@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://chris-bishop.github.io/sitemap.txt
+Sitemap: https://chris-bishop-atr.github.io/sitemap.txt
