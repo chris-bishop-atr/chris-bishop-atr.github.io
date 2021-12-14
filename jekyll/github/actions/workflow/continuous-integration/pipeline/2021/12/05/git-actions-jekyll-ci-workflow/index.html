@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jekyll Continuous Integration and Delivery Pipeline with Github Actions - Build on Push Workflow | Chris Bishop - Software Engineer</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Jekyll Continuous Integration and Delivery Pipeline with Github Actions - Build on Push Workflow" />
+<meta name="author" content="Chris Bishop" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fully Automated Jekyll SSG CI/CD Pipeline with Github Actions - Build on Push Workflow Since I am just getting started on my new blog and portfolio home on the web hosted fully free of charge via Github Pages, one of the very first #TODO items on my list was configuring a fully automated build on push continuous integration and delivery pipeline workflow. Why? One of the main reasons after almost 15 years in the business I am only just now getting around to kicking out my own professional portfolio and blog is simply a matter of not having the free time away from work to devote to initial build out. I have tried to commit to such projects with varying degrees of success over my 15 years, and never seemed to hit paydirt. So - when I decided to endeavor again, priority number one was that every aspect of my development lifecycle would need to be as simplified as possible. How might I achieve such a “fabled creature”? Through the use of SSG (Static Site Generation) to minimize the time I need to spend developing content combined with a trustworthy and easy to implement continuous integration and delivery process, of course! I was absolutely amazed at how simple Github has made that process for the Development Community nowadays, especially considering the amount of time I spend troubleshooting issues with our Jenkins CI/CD servers every week at my day job! Oh, and did I mention that for non enterprise accounts using public repositories, they offer users what I consider to be a very signifficant amount of free tier time each month, to boot? Take a look at Github Actions - Usage Limits for additional information on plan quotas, etc. I wanted to share my experience here in hopes that it may help some other member of the Dev Community some day to finally invest the time in their own career development without the need to burn those precious few off-peak hours we are “allowed” away from our day jobs each week. With that, lets get down to the nuts and bolts! First, this entire website, including this very blog post, are built entirely on top of an awesome SSG (Static Site Generator) framework that is natively supported by Github Pages called Jekyll. Diving deep in to SSGs in general is out of scope for this blog post, however for those who may not be familiar with SSGs - you can learn more about them at the Jekyll website noted above, or check out this great article written by Cloudflare on the subject - What is a static site generator?. After simplifying my life with regard to producing my online content to share with the masses using Jekyll - the next step in making my life as simple as possible was build and deployment automation. To accomplish that, all I had to do was create a very simple Github Actions: Continuous Integration Workflow template and include it in my website’s Git Repo! Here is how simple automating build on push and publish to the web can be with Github Actions and Jekyll: # Author: Chris Bishop # Created: 05Dec2021 # Purpose: Automated CI / CD Pipeline to Build, Scan (TODO), # and Publish Jekyll Assets from main branch to gh-pages branch # See: https://github.com/marketplace/actions/jekyll-actions name: jekyll-ci-build-and-publish-workflow # Controls when the workflow will run on: # Triggers the workflow on push or pull request events but only for the main branch push: branches: [ main ] pull_request: branches: [ main ] # Allows you to run this workflow manually from the Actions tab workflow_dispatch: # A workflow run is made up of one or more jobs that can run sequentially or in parallel jobs: # This workflow contains a single job called &quot;build&quot; build: # The type of runner that the job will run on runs-on: ubuntu-latest # Steps represent a sequence of tasks that will be executed as part of the job steps: # Checks-out your repository/branch under $GITHUB_WORKSPACE, so your job can access it # See: https://github.com/marketplace/actions/checkout - uses: actions/checkout@v2 # Use GitHub Actions&#39; cache to shorten build times and decrease load on servers # See: https://github.com/marketplace/actions/cache - uses: actions/cache@v2 with: path: vendor/bundle key: $\{\{ runner.os \}\}-gems-$\{\{ hashFiles(&#39;**/Gemfile&#39;) \}\} restore-keys: | $\{\{ runner.os \}\}-gems- # Use the 3rd Party Jekyll Managed jekyll-action to build Jekyll sources checked out from main # then publish resulting SSG outfiles to the gh-pages branch which should trigger a new env # deployment to https://chris-bishop.github.io/ # See: https://github.com/marketplace/actions/jekyll-actions - uses: helaili/jekyll-action@v2 with: # NOTE - secrets.GITHUB_TOKEN is like an AWS Default KMS Key managed by Github, NOT a user managed PAT! token: $ # Where the build job should look for source files and templates. Defaults to repo root. # Set the jekyll_src value to a subdirectory below, as desired jekyll_src: &#39;&#39; # Branch to publish the resulting SSG output files to. target_branch: &#39;gh-pages&#39; Source: jekyll-ci-build-and-publish-workflow.yml I have added lots of comments explaining what each step of the workflow job is actually doing, so I will save you some bandwidth and not go through each and every step. That’s it though! I now have a fully automated SSG + CI/CD “headless” content development and management platform which allows me to spend most of my valuable time creating rather than troubleshooting! To see the full source code that runs this very website, here is the source repository: Github - chris-bishop/chris-bishop.github.io It’s a public repository - so feel free to reach out to me on the discussion boards there if you have any further questions / thoughts! Cheers Mates!" />
+<meta property="og:description" content="Fully Automated Jekyll SSG CI/CD Pipeline with Github Actions - Build on Push Workflow Since I am just getting started on my new blog and portfolio home on the web hosted fully free of charge via Github Pages, one of the very first #TODO items on my list was configuring a fully automated build on push continuous integration and delivery pipeline workflow. Why? One of the main reasons after almost 15 years in the business I am only just now getting around to kicking out my own professional portfolio and blog is simply a matter of not having the free time away from work to devote to initial build out. I have tried to commit to such projects with varying degrees of success over my 15 years, and never seemed to hit paydirt. So - when I decided to endeavor again, priority number one was that every aspect of my development lifecycle would need to be as simplified as possible. How might I achieve such a “fabled creature”? Through the use of SSG (Static Site Generation) to minimize the time I need to spend developing content combined with a trustworthy and easy to implement continuous integration and delivery process, of course! I was absolutely amazed at how simple Github has made that process for the Development Community nowadays, especially considering the amount of time I spend troubleshooting issues with our Jenkins CI/CD servers every week at my day job! Oh, and did I mention that for non enterprise accounts using public repositories, they offer users what I consider to be a very signifficant amount of free tier time each month, to boot? Take a look at Github Actions - Usage Limits for additional information on plan quotas, etc. I wanted to share my experience here in hopes that it may help some other member of the Dev Community some day to finally invest the time in their own career development without the need to burn those precious few off-peak hours we are “allowed” away from our day jobs each week. With that, lets get down to the nuts and bolts! First, this entire website, including this very blog post, are built entirely on top of an awesome SSG (Static Site Generator) framework that is natively supported by Github Pages called Jekyll. Diving deep in to SSGs in general is out of scope for this blog post, however for those who may not be familiar with SSGs - you can learn more about them at the Jekyll website noted above, or check out this great article written by Cloudflare on the subject - What is a static site generator?. After simplifying my life with regard to producing my online content to share with the masses using Jekyll - the next step in making my life as simple as possible was build and deployment automation. To accomplish that, all I had to do was create a very simple Github Actions: Continuous Integration Workflow template and include it in my website’s Git Repo! Here is how simple automating build on push and publish to the web can be with Github Actions and Jekyll: # Author: Chris Bishop # Created: 05Dec2021 # Purpose: Automated CI / CD Pipeline to Build, Scan (TODO), # and Publish Jekyll Assets from main branch to gh-pages branch # See: https://github.com/marketplace/actions/jekyll-actions name: jekyll-ci-build-and-publish-workflow # Controls when the workflow will run on: # Triggers the workflow on push or pull request events but only for the main branch push: branches: [ main ] pull_request: branches: [ main ] # Allows you to run this workflow manually from the Actions tab workflow_dispatch: # A workflow run is made up of one or more jobs that can run sequentially or in parallel jobs: # This workflow contains a single job called &quot;build&quot; build: # The type of runner that the job will run on runs-on: ubuntu-latest # Steps represent a sequence of tasks that will be executed as part of the job steps: # Checks-out your repository/branch under $GITHUB_WORKSPACE, so your job can access it # See: https://github.com/marketplace/actions/checkout - uses: actions/checkout@v2 # Use GitHub Actions&#39; cache to shorten build times and decrease load on servers # See: https://github.com/marketplace/actions/cache - uses: actions/cache@v2 with: path: vendor/bundle key: $\{\{ runner.os \}\}-gems-$\{\{ hashFiles(&#39;**/Gemfile&#39;) \}\} restore-keys: | $\{\{ runner.os \}\}-gems- # Use the 3rd Party Jekyll Managed jekyll-action to build Jekyll sources checked out from main # then publish resulting SSG outfiles to the gh-pages branch which should trigger a new env # deployment to https://chris-bishop.github.io/ # See: https://github.com/marketplace/actions/jekyll-actions - uses: helaili/jekyll-action@v2 with: # NOTE - secrets.GITHUB_TOKEN is like an AWS Default KMS Key managed by Github, NOT a user managed PAT! token: $ # Where the build job should look for source files and templates. Defaults to repo root. # Set the jekyll_src value to a subdirectory below, as desired jekyll_src: &#39;&#39; # Branch to publish the resulting SSG output files to. target_branch: &#39;gh-pages&#39; Source: jekyll-ci-build-and-publish-workflow.yml I have added lots of comments explaining what each step of the workflow job is actually doing, so I will save you some bandwidth and not go through each and every step. That’s it though! I now have a fully automated SSG + CI/CD “headless” content development and management platform which allows me to spend most of my valuable time creating rather than troubleshooting! To see the full source code that runs this very website, here is the source repository: Github - chris-bishop/chris-bishop.github.io It’s a public repository - so feel free to reach out to me on the discussion boards there if you have any further questions / thoughts! Cheers Mates!" />
+<link rel="canonical" href="/jekyll/github/actions/workflow/continuous-integration/pipeline/2021/12/05/git-actions-jekyll-ci-workflow/" />
+<meta property="og:url" content="/jekyll/github/actions/workflow/continuous-integration/pipeline/2021/12/05/git-actions-jekyll-ci-workflow/" />
+<meta property="og:site_name" content="Chris Bishop - Software Engineer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-05T00:28:32+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll Continuous Integration and Delivery Pipeline with Github Actions - Build on Push Workflow" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/github/actions/workflow/continuous-integration/pipeline/2021/12/05/git-actions-jekyll-ci-workflow/"},"description":"Fully Automated Jekyll SSG CI/CD Pipeline with Github Actions - Build on Push Workflow Since I am just getting started on my new blog and portfolio home on the web hosted fully free of charge via Github Pages, one of the very first #TODO items on my list was configuring a fully automated build on push continuous integration and delivery pipeline workflow. Why? One of the main reasons after almost 15 years in the business I am only just now getting around to kicking out my own professional portfolio and blog is simply a matter of not having the free time away from work to devote to initial build out. I have tried to commit to such projects with varying degrees of success over my 15 years, and never seemed to hit paydirt. So - when I decided to endeavor again, priority number one was that every aspect of my development lifecycle would need to be as simplified as possible. How might I achieve such a “fabled creature”? Through the use of SSG (Static Site Generation) to minimize the time I need to spend developing content combined with a trustworthy and easy to implement continuous integration and delivery process, of course! I was absolutely amazed at how simple Github has made that process for the Development Community nowadays, especially considering the amount of time I spend troubleshooting issues with our Jenkins CI/CD servers every week at my day job! Oh, and did I mention that for non enterprise accounts using public repositories, they offer users what I consider to be a very signifficant amount of free tier time each month, to boot? Take a look at Github Actions - Usage Limits for additional information on plan quotas, etc. I wanted to share my experience here in hopes that it may help some other member of the Dev Community some day to finally invest the time in their own career development without the need to burn those precious few off-peak hours we are “allowed” away from our day jobs each week. With that, lets get down to the nuts and bolts! First, this entire website, including this very blog post, are built entirely on top of an awesome SSG (Static Site Generator) framework that is natively supported by Github Pages called Jekyll. Diving deep in to SSGs in general is out of scope for this blog post, however for those who may not be familiar with SSGs - you can learn more about them at the Jekyll website noted above, or check out this great article written by Cloudflare on the subject - What is a static site generator?. After simplifying my life with regard to producing my online content to share with the masses using Jekyll - the next step in making my life as simple as possible was build and deployment automation. To accomplish that, all I had to do was create a very simple Github Actions: Continuous Integration Workflow template and include it in my website’s Git Repo! Here is how simple automating build on push and publish to the web can be with Github Actions and Jekyll: # Author: Chris Bishop # Created: 05Dec2021 # Purpose: Automated CI / CD Pipeline to Build, Scan (TODO), # and Publish Jekyll Assets from main branch to gh-pages branch # See: https://github.com/marketplace/actions/jekyll-actions name: jekyll-ci-build-and-publish-workflow # Controls when the workflow will run on: # Triggers the workflow on push or pull request events but only for the main branch push: branches: [ main ] pull_request: branches: [ main ] # Allows you to run this workflow manually from the Actions tab workflow_dispatch: # A workflow run is made up of one or more jobs that can run sequentially or in parallel jobs: # This workflow contains a single job called &quot;build&quot; build: # The type of runner that the job will run on runs-on: ubuntu-latest # Steps represent a sequence of tasks that will be executed as part of the job steps: # Checks-out your repository/branch under $GITHUB_WORKSPACE, so your job can access it # See: https://github.com/marketplace/actions/checkout - uses: actions/checkout@v2 # Use GitHub Actions&#39; cache to shorten build times and decrease load on servers # See: https://github.com/marketplace/actions/cache - uses: actions/cache@v2 with: path: vendor/bundle key: $\\{\\{ runner.os \\}\\}-gems-$\\{\\{ hashFiles(&#39;**/Gemfile&#39;) \\}\\} restore-keys: | $\\{\\{ runner.os \\}\\}-gems- # Use the 3rd Party Jekyll Managed jekyll-action to build Jekyll sources checked out from main # then publish resulting SSG outfiles to the gh-pages branch which should trigger a new env # deployment to https://chris-bishop.github.io/ # See: https://github.com/marketplace/actions/jekyll-actions - uses: helaili/jekyll-action@v2 with: # NOTE - secrets.GITHUB_TOKEN is like an AWS Default KMS Key managed by Github, NOT a user managed PAT! token: $ # Where the build job should look for source files and templates. Defaults to repo root. # Set the jekyll_src value to a subdirectory below, as desired jekyll_src: &#39;&#39; # Branch to publish the resulting SSG output files to. target_branch: &#39;gh-pages&#39; Source: jekyll-ci-build-and-publish-workflow.yml I have added lots of comments explaining what each step of the workflow job is actually doing, so I will save you some bandwidth and not go through each and every step. That’s it though! I now have a fully automated SSG + CI/CD “headless” content development and management platform which allows me to spend most of my valuable time creating rather than troubleshooting! To see the full source code that runs this very website, here is the source repository: Github - chris-bishop/chris-bishop.github.io It’s a public repository - so feel free to reach out to me on the discussion boards there if you have any further questions / thoughts! Cheers Mates!","url":"/jekyll/github/actions/workflow/continuous-integration/pipeline/2021/12/05/git-actions-jekyll-ci-workflow/","@type":"BlogPosting","headline":"Jekyll Continuous Integration and Delivery Pipeline with Github Actions - Build on Push Workflow","dateModified":"2021-12-05T00:28:32+00:00","datePublished":"2021-12-05T00:28:32+00:00","author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Chris Bishop - Software Engineer" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <div class="site-title">
+      <a class="site-title" rel="author" href="/">
+        <img width="45px" height="45px" src="/assets/logo-img-notext-color-stroked.png" />
+      </a>
+      <span>&nbsp;&nbsp;</span>
+    </div>
+
+    <a class="site-title" rel="author" href="/">Chris Bishop - Software Engineer</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Blog</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/resume/">Resume</a><a class="page-link" href="/certifications/">Certifications</a><a class="page-link" href="/contact/">Contact</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Jekyll Continuous Integration and Delivery Pipeline with Github Actions - Build on Push Workflow</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-12-05T00:28:32+00:00" itemprop="datePublished">
+        Dec 5, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="/assets/git_actions_cicd.png" alt="" /></p>
+
+<h3 id="fully-automated-jekyll-ssg-cicd-pipeline-with-github-actions---build-on-push-workflow">Fully Automated Jekyll SSG CI/CD Pipeline with Github Actions - Build on Push Workflow</h3>
+
+<p>Since I am just getting started on my new blog and portfolio home on the web hosted fully free of charge via <a href="https://docs.github.com/en/pages/getting-started-with-github-pages">Github Pages</a>, one of the very first <code class="language-plaintext highlighter-rouge">#TODO</code> items on my list was configuring a fully automated <strong>build on push</strong> continuous integration and delivery pipeline workflow.</p>
+
+<p>Why? One of the main reasons after almost 15 years in the business I am only just now getting around to kicking out my own professional portfolio and blog is simply a matter of not having the free time away from work to devote to initial build out. I have tried to commit to such projects with varying degrees of success over my 15 years, and never seemed to hit paydirt. So - when I decided to endeavor again, priority number one was that every aspect of my development lifecycle would need to be as simplified as possible. How might I achieve such a <a href="https://www.google.com/search?q=fabled%20creature&amp;tbm=isch&amp;tbs=il%3Acl">“fabled creature”</a>? Through the use of SSG (Static Site Generation) to minimize the time I need to spend developing content combined with a trustworthy and easy to implement continuous integration and delivery process, of course!</p>
+
+<p>I was absolutely amazed at how simple <a href="https://github.com">Github</a> has made that process for the Development Community nowadays, especially considering the amount of time I spend troubleshooting issues with our Jenkins CI/CD servers every week at my day job! Oh, and did I mention that for non enterprise accounts using public repositories, they offer users what I consider to be a very signifficant amount of free tier time each month, to boot? Take a look at <a href="https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration#usage-limits">Github Actions - Usage Limits</a> for additional information on plan quotas, etc.</p>
+
+<p>I wanted to share my experience here in hopes that it may help some other member of the Dev Community some day to finally invest the time in their own career development without the need to burn those precious few off-peak hours we are “allowed” away from our day jobs each week.</p>
+
+<p>With that, lets get down to the nuts and bolts!</p>
+
+<p>First, this entire website, including this very blog post, are built entirely on top of an awesome SSG (Static Site Generator) framework that is natively supported by <a href="https://docs.github.com/en/pages/getting-started-with-github-pages">Github Pages</a> called <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+
+<p>Diving deep in to SSGs in general is out of scope for this blog post, however for those who may not be familiar with SSGs - you can learn more about them at the Jekyll website noted above, or check out this great article written by <a href="https://www.cloudflare.com/learning/performance/static-site-generator/">Cloudflare on the subject - What is a static site generator?</a>.</p>
+
+<p>After simplifying my life with regard to producing my online content to share with the masses using <a href="https://jekyllrb.com/">Jekyll</a> - the next step in making my life as simple as possible was build and deployment automation.</p>
+
+<p>To accomplish that, all I had to do was create a very simple <a href="https://lab.github.com/githubtraining/github-actions:-continuous-integration">Github Actions: Continuous Integration</a> Workflow template and include it in my website’s Git Repo!</p>
+
+<p>Here is how simple automating build on push and publish to the web can be with Github Actions and Jekyll:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Author: Chris Bishop</span>
+<span class="c1"># Created: 05Dec2021</span>
+<span class="c1"># Purpose: Automated CI / CD Pipeline to Build, Scan (TODO), </span>
+<span class="c1">#     and Publish Jekyll Assets from main branch to gh-pages branch</span>
+<span class="c1"># See: https://github.com/marketplace/actions/jekyll-actions</span>
+
+<span class="na">name</span><span class="pi">:</span> <span class="s">jekyll-ci-build-and-publish-workflow</span>
+
+<span class="c1"># Controls when the workflow will run</span>
+<span class="na">on</span><span class="pi">:</span>
+  <span class="c1"># Triggers the workflow on push or pull request events but only for the main branch</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+  <span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+<span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="c1"># This workflow contains a single job called "build"</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="c1"># The type of runner that the job will run on</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+    <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+    <span class="na">steps</span><span class="pi">:</span>
+    
+      <span class="c1"># Checks-out your repository/branch under $GITHUB_WORKSPACE, so your job can access it</span>
+      <span class="c1"># See: https://github.com/marketplace/actions/checkout</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      
+      <span class="c1"># Use GitHub Actions' cache to shorten build times and decrease load on servers</span>
+      <span class="c1"># See: https://github.com/marketplace/actions/cache</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/cache@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">vendor/bundle</span>
+          <span class="na">key</span><span class="pi">:</span> <span class="s">$\{\{ runner.os \}\}-gems-$\{\{ hashFiles('**/Gemfile') \}\}</span>
+          <span class="na">restore-keys</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">$\{\{ runner.os \}\}-gems-</span>
+            
+      <span class="c1"># Use the 3rd Party Jekyll Managed jekyll-action to build Jekyll sources checked out from main</span>
+      <span class="c1">#     then publish resulting SSG outfiles to the gh-pages branch which should trigger a new env</span>
+      <span class="c1">#     deployment to https://chris-bishop.github.io/</span>
+      <span class="c1"># See: https://github.com/marketplace/actions/jekyll-actions</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">helaili/jekyll-action@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="c1"># NOTE - secrets.GITHUB_TOKEN is like an AWS Default KMS Key managed by Github, NOT a user managed PAT!</span>
+          <span class="na">token</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="c1"># Where the build job should look for source files and templates. Defaults to repo root. </span>
+          <span class="c1"># Set the jekyll_src value to a subdirectory below, as desired</span>
+          <span class="na">jekyll_src</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+          <span class="c1"># Branch to publish the resulting SSG output files to.</span>
+          <span class="na">target_branch</span><span class="pi">:</span> <span class="s1">'</span><span class="s">gh-pages'</span>
+</code></pre></div></div>
+
+<p><em>Source: <a href="https://github.com/chris-bishop/chris-bishop.github.io/blob/main/.github/workflows/jekyll-ci-build-and-publish-workflow.yml">jekyll-ci-build-and-publish-workflow.yml</a></em></p>
+
+<p>I have added lots of comments explaining what each step of the workflow job is actually doing, so I will save you some bandwidth and not go through each and every step.</p>
+
+<p>That’s it though! I now have a fully automated SSG + CI/CD “headless” content development and management platform which allows me to spend most of my valuable time creating rather than troubleshooting!</p>
+
+<p>To see the full source code that runs this very website, here is the source repository: <a href="https://github.com/chris-bishop/chris-bishop.github.io">Github - chris-bishop/chris-bishop.github.io</a></p>
+
+<p>It’s a public repository - so feel free to reach out to me on the discussion boards there if you have any further questions / thoughts!</p>
+
+<p>Cheers Mates!</p>
+
+  </div><a class="u-url" href="/jekyll/github/actions/workflow/continuous-integration/pipeline/2021/12/05/git-actions-jekyll-ci-workflow/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+	      
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="chris-bishop-084b26a" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/chris-bishop-084b26a?trk=profile-badge"></a></div>
+	
+      </div>
+      <div class="footer-col">
+        <p>My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.</p>
+	
+	 <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe (RSS XML Feed)</span>
+          </a>
+        </p>
+	
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/chris-bishop" title="chris-bishop"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://stackoverflow.com/users/13297682" title="13297682"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/chris-bishop-084b26a" title="chris-bishop-084b26a"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/ChrisBi73512691" title="ChrisBi73512691"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+<p class="social-media-links"><hr /></p>
+
+<ul class="social-media-list">
+<li> <span style="display: inline-block;">Proudly built with:</span>
+      <a target="_blank" href="https://jekyllrb.com/">
+        <img width="150px" height="50px" src="/assets/githublogos/jekyll-logo-dark-solid.png" />
+      </a>
+    </li>
+<li><span style="display: inline-block;">Gratefully powered by:</span> 
+        <a target="_blank" href="https://github.com/">
+        <img width="150px" height="50px" src="/assets/githublogos/GitHub_Logo_White.png" />
+      </a>
+    </li>
+</ul>
+
+<p class="social-media-list"><hr /></p>
+
+<p class="social-media-list"><em>Opinions and shares expressed on my Assume the Role&trade; Blog, Personal Website, and Social Platforms are completely my own and do not reflect those of my employer or any of my connections</em></p>
+
+<p class="social-media-list"><hr /></p>
+
+      <p class="social-media-list">Assume the Role&trade; &copy; 2021 Chris Bishop</p>
+
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
