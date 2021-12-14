@@ -1,0 +1,153 @@
+images:
+  - image: /assets/provenance/HackerRankCertJavaBasic.png
+  - image: /assets/provenance/HackerRankCertPythonBasic.png
+  - image: /assets/provenance/HackerRankCertSQLIntermediate.png
+  - image: /assets/provenance/HackerRankCertSQLBasic.png
+  - image: /assets/provenance/SecurityJourneyGreenBeltCertificate_AWS.png
+  - image: /assets/provenance/SecurityJourneyGreenBeltCertificate_Containers.png
+  - image: /assets/provenance/SecurityJourneyYellowBeltCertificate.png
+  - image: /assets/provenance/SecurityJourneyWhiteBeltCertificate.png
+  - image: /assets/provenance/CERT_2016_AWS_ARCHITECT.png
+  - image: /assets/provenance/CERT_2015_MYSQL_PERF_TUNING.png
+  - image: /assets/provenance/CERT_2012_MYSQL_FOR_DBA_2.png
+  - image: /assets/provenance/MySQL8_vs_MariaDB10_4_certificate.png
+  - image: /assets/provenance/CERT_2013_PENTAHO_BA_1.png
+  - image: /assets/provenance/CERT_2014_PENTAHO_BA_3_DM.png
+  - image: /assets/provenance/BA2000_certificate.png
+  - image: /assets/provenance/DI1500_certificate.png
+  - image: /assets/provenance/CERT_2017_PENTAHO_DATA_INTGRTN_FUND.png
+  - image: /assets/provenance/CERT_2017_PENTAHO_SUPRT_TRBSHT.png
+  - image: /assets/provenance/CERT_2020_iTable1.1_DataCleanup.png
+
+tblcols:
+  - col: "Issuing Organization"
+  - col: "Issue Date"
+  - col: "Name"
+  - col: "Credential ID"
+  - col: "View Credential"
+
+certifications:
+  - certification1:
+    credname: "Java (Basic)"
+    orgname: "Hacker Rank"
+    orghref: "https://www.hackerrank.com/"
+    credid: "36b675df71e3"
+    credhref: "https://www.hackerrank.com/certificates/36b675df71e3"
+    creddate: "Nov. 2021"
+  - certification2:
+    credname: "Python (Basic)"
+    orgname: "Hacker Rank"
+    orghref: "https://www.hackerrank.com/"
+    credid: "e724f5716369"
+    credhref: "https://www.hackerrank.com/certificates/e724f5716369"
+    creddate: "Nov. 2021"
+  - certification3:
+    credname: "SQL (Intermediate)"
+    orgname: "Hacker Rank"
+    orghref: "https://www.hackerrank.com/"
+    credid: "878909e0b70a"
+    credhref: "https://www.hackerrank.com/certificates/878909e0b70a"
+    creddate: "Nov. 2021"
+  - certification4:
+    credname: "SQL (Basic)"
+    orgname: "Hacker Rank"
+    orghref: "https://www.hackerrank.com/"
+    credid: "4084eadbb4da"
+    credhref: "https://www.hackerrank.com/certificates/4084eadbb4da"
+    creddate: "Nov. 2021"
+  - certification5:
+    credname: "Security Green Belt - AWS"
+    orgname: "Security Journey"
+    orghref: "https://www.securityjourney.com/"
+    credid: "9288"
+    credhref: "https://elseviersecurityawareness.securityjourney.com/certificates/34721ac6-8441-4ee0-a94d-924ab6e4863e.pdf"
+    creddate: "Dec. 2021"
+  - certification6: "Security Green Belt - Containers and Orchestration"
+    orgname:
+    credname: "Security Journey"
+    orghref: "https://www.securityjourney.com/"
+    credid: "4982"
+    credhref: "https://elseviersecurityawareness.securityjourney.com/certificates/dcf5d7bb-c6fa-429c-982c-d66e5645ed5f.pdf"
+    creddate: "Dec. 2021"
+  - certification7:
+    credname: "Security Yellow Belt - In Depth Security for the Development Community"
+    orgname: "Security Journey"
+    orghref: "https://www.securityjourney.com/"
+    credid: "1847"
+    credhref: "https://elseviersecurityawareness.securityjourney.com/certificates/0c0116eb-017f-42be-810a-512c89146b7a.pdf"
+    creddate: "Dec. 2020"
+  - certification8:
+    credname: "Security White Belt - Foundational Security Training"
+    orgname: "Security Journey"
+    orghref: "https://www.securityjourney.com/"
+    credid: "1718"
+    credhref: "https://elseviersecurityawareness.securityjourney.com/certificates/fc6e55b1-c297-4305-af1c-8b7f9a39f50a.pdf"
+    creddate: "Sep. 2020"
+  - certification9:
+    credname: "Architecting on AWS"
+    orgname: "Skillsoft Global Knowledge (AWS Training Partner)"
+    orghref: "https://www.globalknowledge.com/"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662675/single-media-viewer/"
+    creddate: "May 2016"
+  - certification10:
+    credname: "MySQL Performance Tuning"
+    orgname: "Oracle University"
+    orghref: "https://education.oracle.com/"
+    credid: "7586890"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662526/single-media-viewer/"
+    creddate: "Jun. 2021"
+  - certification11:
+    credname: "MySQL for Database Administrators"
+    orgname: "Oracle University"
+    orghref: "https://education.oracle.com/"
+    credid: "6504431"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662050/single-media-viewer/"
+    creddate: "Dec. 2012"
+  - certification12:
+    credname: "MySQL 8 vs. MariaDB 10.4"
+    orgname: "Percona"
+    orghref: "https://www.percona.com/"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1581011434764/single-media-viewer/"
+    creddate: "Feb. 2020"
+  - certification13:
+    credname: "Pentaho Business Analytics - BA1"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662198/single-media-viewer/"
+    creddate: "Oct. 2013"
+  - certification14:
+    credname: "Pentaho Business Analytics Data Modeling - BA3"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662373/single-media-viewer/"
+    creddate: "May 2014"
+  - certification15:
+    credname: "Business Analytics Report Designer - BA2"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141661888/single-media-viewer/"
+    creddate: "Nov. 2019"
+  - certification16:
+    credname: "Pentaho Data Integration Advanced - DI15"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141663148/single-media-viewer/"
+    creddate: "Nov. 2019"
+  - certification17:
+    credname: "Pentaho Data Integration Fundamentals - DI1"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662841/single-media-viewer/"
+    creddate: "Sep. 2017"
+  - certification18:
+    credname: "Pentaho Business Analytics and Data Integration Server Support and Troubleshooting - SP1"
+    orgname: "Hitachi Vantara Pentaho"
+    orghref: "https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho.html"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1579141662992/single-media-viewer/"
+    creddate: "May 2017"
+  - certification19:
+    credname: "Property and Units Cleanup"
+    orgname: "Elsevier Knovel"
+    orghref: "https://www.elsevier.com/solutions/knovel-engineering-information"
+    credhref: "https://www.linkedin.com/in/chris-bishop-084b26a/details/featured/1601775668998/single-media-viewer/"
+    creddate: "Sep. 2020"
