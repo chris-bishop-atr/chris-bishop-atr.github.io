@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Contact | Chris Bishop - Software Engineer</title>
 <meta name="generator" content="Jekyll v4.2.1" />
 <meta property="og:title" content="Contact" />
@@ -19,9 +19,25 @@
 {"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://chris-bishop-atr.github.io/contact/","@type":"WebPage","headline":"Contact","author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="shortcut icon" type="image/png" href="https://chris-bishop-atr.github.io/assets/favicon.png">
-  <meta property="og:image" content="https://chris-bishop-atr.github.io/assets/favicon.png" />
-  <meta property="og:image:alt" content="Chris Bishop - Assume the Role™ Logo Mark" /><link type="application/atom+xml" rel="alternate" href="https://chris-bishop-atr.github.io/feed.xml" title="Chris Bishop - Software Engineer" />
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="https://chris-bishop-atr.github.io/assets/favicon.png"
+  />
+  <meta
+    property="og:image"
+    content="https://chris-bishop-atr.github.io/assets/favicon.png"
+  />
+  <meta
+    property="og:image:alt"
+    content="Chris Bishop - Assume the Role™ Logo Mark"
+  /><link type="application/atom+xml" rel="alternate" href="https://chris-bishop-atr.github.io/feed.xml" title="Chris Bishop - Software Engineer" />
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script
+    type="text/javascript"
+    src="https://assets.calendly.com/assets/external/widget.js"
+  ></script>
 </head>
 <body><header class="site-header">
 
@@ -54,13 +70,44 @@
   </header>
 
   <div class="post-content">
-    <p>If you would like to get in touch with me, your best option would be to reach out via my Social Platform profiles using the links in the footer section of any page on this site. If you would prefer direct method, you can submit your information using this form, and I will respond as soon as I can. Please note - to mitigate spam, etc, as much as possible - use of this embedded Contact Me form will require you to sign in one time only with your Google Account (your account will NOT be linked or exposed to me - this is simply a means of Federated Identity Verification!)</p>
-
-<p><em>(if you prefer to view the contact form outside of the iframe below, <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSderSdSGuxx2oEnj3IIWlEzzW_3rKi2PW9pjvgQCtOLfwbNOQ/viewform?embedded=false">click here</a>)</em></p>
-
-<p align="center">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSderSdSGuxx2oEnj3IIWlEzzW_3rKi2PW9pjvgQCtOLfwbNOQ/viewform?embedded=true" style="background-color: #f6f6f6" width="640" height="822" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-</p>
+    <div class="wrapper">
+  <div id="calendly-content" class="calendly-inline-widget" style="
+      background-color: #181818;
+      color: #bbbbbb;
+      display: flex;
+      position: relative;
+      min-width: 1000px;
+      height: 820px;
+      margin-left: -140px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    " data-auto-load="false"></div>
+  <script type="text/javascript">
+    window.onload = function () {
+      Calendly.initInlineWidget({
+        url: "https://calendly.com/chris-j-bishop/meet-greet-consult-chris-bishop",
+        parentElement: document.getElementById("calendly-content"),
+        prefill: {},
+        utm: {},
+        text: "Schedule time with me",
+        color: "#181818",
+        textColor: "#bbbbbb",
+        branding: false,
+      });
+    };
+    function isCalendlyEvent(e) {
+      return e.data.event && e.data.event.indexOf("calendly") === 0;
+    }
+    window.addEventListener("message", function (e) {
+      if (isCalendlyEvent(e)) {
+        console.log(e.data);
+      }
+    });
+  </script>
+</div>
 
   </div>
 
