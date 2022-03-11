@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Welcome to Jekyll!" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://chris-bishop-atr.github.io/2021-12-04-example.md.BAK"},"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://chris-bishop-atr.github.io/2021-12-04-example.md.BAK","@type":"BlogPosting","headline":"Welcome to Jekyll!","dateModified":"2021-12-04T06:56:48+00:00","datePublished":"2021-12-04T06:56:48+00:00","author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
+{"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://chris-bishop-atr.github.io/2021-12-04-example.md.BAK","headline":"Welcome to Jekyll!","dateModified":"2021-12-04T06:56:48+00:00","datePublished":"2021-12-04T06:56:48+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://chris-bishop-atr.github.io/2021-12-04-example.md.BAK"},"author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link
@@ -167,7 +167,7 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 
 <p class="social-media-list"><hr /></p>
 
-<p class="social-media-list">Build Revision: </p>
+<p class="social-media-list">Build Revision: ce45681f5cbd002155dc08b2b2c887518907e248</p>
 
     </div>
 
