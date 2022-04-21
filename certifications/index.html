@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Certifications" />
 <script type="application/ld+json">
-{"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://chris-bishop-atr.github.io/certifications/","headline":"Certifications","@type":"WebPage","author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
+{"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://chris-bishop-atr.github.io/certifications/","@type":"WebPage","headline":"Certifications","author":{"@type":"Person","name":"Chris Bishop"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link
@@ -128,9 +128,11 @@
     <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-17" />
     
     <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-18" />
+    
+    <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-19" />
        
     <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="slide-idx-18"></label>
+      <label class="carousel__control carousel__control--backward" for="slide-idx-19"></label>
       <label class="carousel__control carousel__control--forward" for="slide-idx-1"></label>
     </div>
       
@@ -221,11 +223,18 @@
       
     <div class="carousel__controls">
       <label class="carousel__control carousel__control--backward" for="slide-idx-17"></label>
+      <label class="carousel__control carousel__control--forward" for="slide-idx-19"></label>
+    </div>
+      
+    <div class="carousel__controls">
+      <label class="carousel__control carousel__control--backward" for="slide-idx-18"></label>
       <label class="carousel__control carousel__control--forward" for="slide-idx-0"></label>
     </div>
     
     <div class="carousel__track">
       <ul>
+        
+        <li class="carousel__slide" style="background-image: url('/assets/provenance/triplebyte-certification-data-warehouse-etl.png');"></li>
         
         <li class="carousel__slide" style="background-image: url('/assets/provenance/HackerRankCertJavaBasic.png');"></li>
         
@@ -307,6 +316,8 @@
       
       <label class="carousel__indicator" for="slide-idx-18"></label>
       
+      <label class="carousel__indicator" for="slide-idx-19"></label>
+      
     </div>
   </div>
 </div>
@@ -347,6 +358,28 @@
   
 
   <tbody>
+    
+
+    <tr>
+      <td>
+        <a target="_blank" href="https://triplebyte.com/">Triplebyte</a>
+      </td>
+
+      <td>Mar. 2022</td>
+
+      <td>
+        <em><strong>Data Warehousing/ETL - Advanced</strong></em>
+      </td>
+
+      
+      <td>-</td>
+      
+
+      <td>
+        <a target="_blank" href="https://triplebyte.com/tb/chris-bishop-zjjie4n/certificate"><em>View Credential</em></a>
+      </td>
+    </tr>
+
     
 
     <tr>
@@ -1221,6 +1254,29 @@
     opacity: 1;
   }
   
+  .carousel__activator:nth-of-type(20):checked ~ .carousel__track {
+    -webkit-transform: translateX(-1900%);
+            transform: translateX(-1900%);
+  }
+  .carousel__activator:nth-of-type(20):checked ~ .carousel__slide:nth-of-type(20) {
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .carousel__activator:nth-of-type(20):checked ~ .carousel__controls:nth-of-type(20) {
+    display: block;
+    opacity: 1;
+  }
+  .carousel__activator:nth-of-type(20):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(20) {
+    opacity: 1;
+  }
+  
 
   .carousel__control {
     height: 30px;
@@ -1385,6 +1441,11 @@
             transform: translateX(1800%);
   }
   
+  .carousel__track .carousel__slide:nth-of-type(20) {
+    -webkit-transform: translateX(1900%);
+            transform: translateX(1900%);
+  }
+  
 
   .carousel--scale .carousel__slide {
     -webkit-transform: scale(0);
@@ -1519,6 +1580,12 @@
     background-position: center;
   }
   
+  .carousel__slide:nth-of-type(20),
+  .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(20) {
+    background-size: cover;
+    background-position: center;
+  }
+  
 </style>
 
 <script>
@@ -1624,7 +1691,7 @@
 
 <p class="social-media-list"><hr /></p>
 
-<p class="social-media-list">Build Revision: 6fd3cd8f244e3064301c7975d4893b03d839315f</p>
+<p class="social-media-list">Build Revision: </p>
 
     </div>
 
