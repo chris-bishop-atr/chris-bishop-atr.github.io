@@ -79,44 +79,13 @@
 
   <div class="post-content">
     <div class="wrapper">
-  <div id="calendly-content" class="calendly-inline-widget" style="
-      background-color: #181818;
-      color: #bbbbbb;
-      display: flex;
-      position: relative;
-      min-width: 1000px;
-      height: 820px;
-      margin-left: -140px;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-    " data-auto-load="false"></div>
-  <script type="text/javascript">
-    window.onload = function () {
-      Calendly.initInlineWidget({
-        url: "https://calendly.com/chris-j-bishop/meet-greet-consult-chris-bishop",
-        parentElement: document.getElementById("calendly-content"),
-        prefill: {},
-        utm: {},
-        text: "Schedule time with me",
-        color: "#181818",
-        textColor: "#bbbbbb",
-        branding: false,
-      });
-    };
-    function isCalendlyEvent(e) {
-      return e.data.event && e.data.event.indexOf("calendly") === 0;
-    }
-    window.addEventListener("message", function (e) {
-      if (isCalendlyEvent(e)) {
-        console.log(e.data);
-      }
-    });
-  </script>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+  
+  <div class="calendly-inline-widget" data-url="https://calendly.com/chris-j-bishop/schedule-30min-meeting-with-chris-bishop?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async=""></script>
+  
+
+
 </div>
 
   </div>
