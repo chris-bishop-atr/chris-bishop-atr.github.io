@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="990"
+   height="90"
+   viewBox="0 0 261.93751 23.812499"
+   version="1.1"
+   id="svg1242"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   sodipodi:docname="logo-text-color-stroked.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1244"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="532.04929"
+     inkscape:cy="539.00419"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1239">
+    <linearGradient
+       id="linearGradient45607"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop45605" />
+    </linearGradient>
+    <rect
+       x="4.4554782"
+       y="6.4876108"
+       width="1102.7145"
+       height="158.82693"
+       id="rect27814" />
+    <rect
+       x="11.513608"
+       y="8.0959301"
+       width="1099.8782"
+       height="198.29051"
+       id="rect7752" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient45607"
+       id="linearGradient47149"
+       gradientUnits="userSpaceOnUse"
+       x1="5.3300781"
+       y1="64.8125"
+       x2="988.00977"
+       y2="64.8125" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.2677492,-5.7992555)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text7750"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:FreeMono;white-space:pre;shape-inside:url(#rect7752);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,0,0.52916663)"
+       id="text27812"
+       style="font-style:normal;font-weight:normal;font-size:112px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect27814);fill:#000000;fill-opacity:1;stroke:url(#linearGradient47149);stroke-width:1.07717;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+         x="4.4550781"
+         y="105.58203"
+         id="tspan47188"><tspan
+           style="fill:#ff0000;stroke-linecap:round;stroke-linejoin:round"
+           id="tspan47182">ASSUME</tspan><tspan
+           style="fill:#00ff00;stroke-linecap:round;stroke-linejoin:round"
+           id="tspan47184">THE</tspan><tspan
+           style="fill:#0000ff;stroke-linecap:round;stroke-linejoin:round"
+           id="tspan47186">ROLE</tspan></tspan></text>
+  </g>
+</svg>
