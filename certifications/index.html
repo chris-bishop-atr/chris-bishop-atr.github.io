@@ -130,9 +130,11 @@
     <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-18" />
     
     <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-19" />
+    
+    <input class="carousel__activator" type="radio" name="carousel" id="slide-idx-20" />
        
     <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="slide-idx-19"></label>
+      <label class="carousel__control carousel__control--backward" for="slide-idx-20"></label>
       <label class="carousel__control carousel__control--forward" for="slide-idx-1"></label>
     </div>
       
@@ -228,6 +230,11 @@
       
     <div class="carousel__controls">
       <label class="carousel__control carousel__control--backward" for="slide-idx-18"></label>
+      <label class="carousel__control carousel__control--forward" for="slide-idx-20"></label>
+    </div>
+      
+    <div class="carousel__controls">
+      <label class="carousel__control carousel__control--backward" for="slide-idx-19"></label>
       <label class="carousel__control carousel__control--forward" for="slide-idx-0"></label>
     </div>
     
@@ -243,6 +250,8 @@
         <li class="carousel__slide" style="background-image: url('/assets/provenance/HackerRankCertSQLIntermediate.png');"></li>
         
         <li class="carousel__slide" style="background-image: url('/assets/provenance/HackerRankCertSQLBasic.png');"></li>
+        
+        <li class="carousel__slide" style="background-image: url('/assets/provenance/SecurityJourneyGreenBeltCertificate_Terraform.png');"></li>
         
         <li class="carousel__slide" style="background-image: url('/assets/provenance/SecurityJourneyGreenBeltCertificate_AWS.png');"></li>
         
@@ -317,6 +326,8 @@
       <label class="carousel__indicator" for="slide-idx-18"></label>
       
       <label class="carousel__indicator" for="slide-idx-19"></label>
+      
+      <label class="carousel__indicator" for="slide-idx-20"></label>
       
     </div>
   </div>
@@ -487,6 +498,28 @@
 
       <td>
         <a target="_blank" href="https://elseviersecurityawareness.securityjourney.com/certificates/34721ac6-8441-4ee0-a94d-924ab6e4863e.pdf"><em>View Credential</em></a>
+      </td>
+    </tr>
+
+    
+
+    <tr>
+      <td>
+        <a target="_blank" href="https://www.securityjourney.com/">Security Journey</a>
+      </td>
+
+      <td>Jun. 2022</td>
+
+      <td>
+        <em><strong>Security Green Belt - Terraform</strong></em>
+      </td>
+
+      
+      <td>2570</td>
+      
+
+      <td>
+        <a target="_blank" href="https://tryus.securityjourney.com/certificates/e96636ae-19d0-4e94-b53b-270b28958863.pdf"><em>View Credential</em></a>
       </td>
     </tr>
 
@@ -1277,6 +1310,29 @@
     opacity: 1;
   }
   
+  .carousel__activator:nth-of-type(21):checked ~ .carousel__track {
+    -webkit-transform: translateX(-2000%);
+            transform: translateX(-2000%);
+  }
+  .carousel__activator:nth-of-type(21):checked ~ .carousel__slide:nth-of-type(21) {
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .carousel__activator:nth-of-type(21):checked ~ .carousel__controls:nth-of-type(21) {
+    display: block;
+    opacity: 1;
+  }
+  .carousel__activator:nth-of-type(21):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(21) {
+    opacity: 1;
+  }
+  
 
   .carousel__control {
     height: 30px;
@@ -1446,6 +1502,11 @@
             transform: translateX(1900%);
   }
   
+  .carousel__track .carousel__slide:nth-of-type(21) {
+    -webkit-transform: translateX(2000%);
+            transform: translateX(2000%);
+  }
+  
 
   .carousel--scale .carousel__slide {
     -webkit-transform: scale(0);
@@ -1582,6 +1643,12 @@
   
   .carousel__slide:nth-of-type(20),
   .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(20) {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .carousel__slide:nth-of-type(21),
+  .carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(21) {
     background-size: cover;
     background-position: center;
   }
