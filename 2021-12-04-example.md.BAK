@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Welcome to Jekyll! | Chris Bishop - Software Engineer</title>
-<meta name="generator" content="Jekyll v4.2.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Welcome to Jekyll!" />
 <meta name="author" content="Chris Bishop" />
 <meta property="og:locale" content="en_US" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Welcome to Jekyll!" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Chris Bishop"},"description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","url":"https://christopher-bishop.com/2021-12-04-example.md.BAK","@type":"BlogPosting","headline":"Welcome to Jekyll!","dateModified":"2021-12-04T06:56:48+00:00","datePublished":"2021-12-04T06:56:48+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://christopher-bishop.com/2021-12-04-example.md.BAK"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Chris Bishop"},"dateModified":"2021-12-04T06:56:48+00:00","datePublished":"2021-12-04T06:56:48+00:00","description":"My name is Chris Bishop. I am a Cloud Software Engineer with 14+ years of success transforming challenging business initiatives into innovative, yet sustaining, technology solutions. I have a demonstrated history of expertise leveraging emerging technology to manage multiple production workloads as a key member of the Core Engineering Team for an industry leading SaaS, Data, and Analytics provider.","headline":"Welcome to Jekyll!","mainEntityOfPage":{"@type":"WebPage","@id":"https://christopher-bishop.com/2021-12-04-example.md.BAK"},"url":"https://christopher-bishop.com/2021-12-04-example.md.BAK"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link
